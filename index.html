@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insider Threat Detection Dashboard</title>
+  <link rel="stylesheet" href="static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1>INSIDER THREAT</h1>
+    <div class="admin-panel">Administrator ▾</div>
+  </header>
+
+  <div class="container">
+    <aside>
+      <h3>Apps</h3>
+      <ul>
+        <li>Search & Reporting</li>
+        <li>Audit Trail</li>
+        <li class="active">Insider Threat Detection</li>
+        <li>Secure Gateway</li>
+      </ul>
+    </aside>
+
+    <main>
+      <div class="dashboard-header">
+        <h2>Insider Threat Detection Dashboard (Automated)</h2>
+        <p>Real-time monitoring of insider threats with live data</p>
+      </div>
+
+      <section class="stats">
+        <div class="card">
+          <h3>Active Threats (Last 24 Hours)</h3>
+          <div class="big-number" id="activeThreats">0</div>
+        </div>
+        <div class="card">
+          <h3>High Risk Users (Live)</h3>
+          <div class="big-number" id="highRisk">0</div>
+        </div>
+        <div class="card">
+          <h3>Average Threat Score</h3>
+          <div class="big-number" id="avgScore">0.00</div>
+        </div>
+      </section>
+
+      <section class="charts">
+        <div class="chart">
+          <h3>Real-Time Threat Distribution</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+        <div class="chart">
+          <h3>Threat Activity Timeline</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>AI-Powered Insider Threat Detection © 2025</p>
+  </footer>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
